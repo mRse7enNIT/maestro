@@ -23,7 +23,9 @@ def calculate_total(csv_file_path, column_name_1, column_name_2):
 # csv_file_path = '/home/sap/prj/maestro/vgg16_dataflow_sap_1024.csv'
 # csv_file_path = '/home/sap/prj/maestro/vgg16_dataflow_faraz_5.csv'
 # csv_file_path = '/home/sap/prj/maestro/vgg16_dataflow_faraz_5_fc_kmspatial.csv'
-csv_file_path = '/home/sap/prj/maestro/vgg16_dataflow_faraz_5_fc_kmspatial.csv'
+# csv_file_path = '/home/sap/prj/maestro/vgg16_dataflow_faraz_5_fc_kmspatial.csv'
+csv_file_path = '/home/sap/prj/maestro/vgg16_dataflow_submission.csv'
+# csv_file_path = '/home/sap/prj/maestro/UNet_dataflow_submission.csv'
 column_name_1 = ' Runtime (Cycles)'
 column_name_2 = ' Activity count-based Energy (nJ)'
 
@@ -53,7 +55,8 @@ noc_bw_ratio = (noc_bw_target-noc_bw_actual)/noc_bw_target
 
 # model_score = math.sqrt(latency_ratio * energy_ratio)
 #implement geometric mean
-model_score = (latency_ratio * energy_ratio * PE_ratio * noc_bw_ratio)**(1/4)
+# model_score = (latency_ratio * energy_ratio * PE_ratio * noc_bw_ratio)**(1/4)
+model_score = (latency_ratio * energy_ratio * PE_ratio * noc_bw_ratio)
 
 print('PE considered:', PE_actual)
 print('NoC bandwidth considered:', noc_bw_actual)
